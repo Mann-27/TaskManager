@@ -14,12 +14,16 @@ const userSchema = new mongoose.Schema({
     email: {
         type: String,
         minLength: 5,
-        required: true,
-        unique: true,
+        minLength: 9,
+        lowercase:true,
+        match: /^[a-z0-9._]+@[a-z]+\.[a-z]{2,4}$/,
+        required: true,//email cannot be empty
+        unique: true,//email id must be unique ,as there cant be 2 same ids.
     },
     password: {
         type: String,
-        minLength: 6,
+        minLength: 8,
+        match:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$#&])[A-Za-z\d@$#&]{8,}$/,
         required: true,
     },
     tasks: [{
