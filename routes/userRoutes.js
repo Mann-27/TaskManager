@@ -3,7 +3,7 @@ const User=require('../models/User');
 const jwt=require('jsonwebtoken');
 
 const app=express.Router();
-//const {User}=require("../db");
+
 const bcrypt=require('bcrypt');
 // to check api 
 app.get('/',(req,res)=>{
