@@ -5,7 +5,7 @@ const Task = require("./Task")
 const userSchema = new mongoose.Schema({
     firstName: {
         type: String,
-        required: false,
+        required: true,
     },
     lastName: {
         type: String,
