@@ -28,7 +28,10 @@ app.get("/", userMiddleware, async (req, res) => {
   app.get("/:id", userMiddleware, async (req, res) => {
     try {
       const taskId = req.params.id;
-      const task = await Task.findById(taskId);
+      const task = await Task.findOne({
+        _id:taskId,
+        owner:req.user._id
+      });
       if (!task) {
         return res.status(404).json({ error: "Task not found" });
       }
