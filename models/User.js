@@ -23,7 +23,6 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         minLength: 8,
-        match:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$#&])[A-Za-z\d@$#&]{8,}$/,
         required: true,
     },
     tasks: [{
