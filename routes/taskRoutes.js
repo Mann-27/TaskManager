@@ -6,7 +6,7 @@ const Task = require('../models/Task');
 const User=require('../models/User');
 
 //to check api/test api
-app.get('/',userMiddleware,(req,res)=>{
+app.get('/test',userMiddleware,(req,res)=>{
      res.json('task routes are working.');
 });
 app.get("/", userMiddleware, async (req, res) => {
